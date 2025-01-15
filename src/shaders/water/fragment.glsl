@@ -4,6 +4,7 @@ uniform float uColorOffset;
 uniform float uColorMultiplier;
 
 varying float vElevation;
+varying vec3 vNormal;
 
 void main()
 {
@@ -15,5 +16,6 @@ void main()
 
     // Final color
     gl_FragColor = vec4(color, 1.0);
+    #include <tonemapping_fragment>
     #include <colorspace_fragment>
 }

@@ -1,4 +1,6 @@
 #include ../includes/perlinClassic3D.glsl
+#include ../includes/lights/point-light.glsl
+#include ../includes/lights/directional-light.glsl
 
 uniform float uTime;
 uniform float uBigWavesElevation;
@@ -11,6 +13,7 @@ uniform float uSmallWavesSpeed;
 uniform float uSmallIterations;
 
 varying float vElevation;
+varying vec3 vNormal;
 
 // Classic Perlin 3D Noise 
 // by Stefan Gustavson
@@ -37,4 +40,5 @@ void main() {
 
     // Varyings
     vElevation = elevation;
+    vNormal = modelMatrix;
 }
