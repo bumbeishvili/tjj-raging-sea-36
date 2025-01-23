@@ -14,6 +14,7 @@ uniform float uSmallIterations;
 
 varying float vElevation;
 varying vec3 vNormal;
+varying vec3 vPosition;
 
 // Classic Perlin 3D Noise 
 // by Stefan Gustavson
@@ -41,4 +42,5 @@ void main() {
     // Varyings
     vElevation = elevation;
     vNormal = (modelMatrix * vec4(normal, 0.0)).xyz;
+    vPosition = modelPosition.xyz;
 }
