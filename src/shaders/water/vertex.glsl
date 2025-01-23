@@ -40,5 +40,5 @@ void main() {
 
     // Varyings
     vElevation = elevation;
-    vNormal = modelMatrix;
+    vNormal = (modelMatrix * vec4(normal, 0.0)).xyz;
 }
